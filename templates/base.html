@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meu Site Moderno</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">MeuSite</div>
+      <div class="nav-links">
+        <a href="/" >Início</a>
+        <a href="/sobre" >Sobre</a>
+        <a href="/servicos" >Serviços</a>
+        <a href="/contato" >Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 MeuSite. Todos os direitos reservados.</p>
+    <p>Desenvolvido por <a href="#">Seu Nome</a></p>
+  </footer>
+
+  <!-- <script>
+    let pagina = "";
+
+    function Mudar(x){
+      pagina = x;
+
+    }
+    Mudar('Inicio')
+
+    function Mostrar() {
+        let classes = ["Inicio", "Sobre", "Servicos", "Contato"]; // ids como strings
+
+        for (let i = 0; i < classes.length; i++) {
+            let elemento = document.getElementsByClassName(classes[i]);
+            if (elemento.class == pagina) {
+                elemento.style.display = "block";
+            } else {
+              elemento.style.display = "none";
+            }
+        }
+    }
+    Mostrar()
+
+</script> -->
+
+</body>
+</html>
