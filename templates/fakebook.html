@@ -1,129 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FakeBook</title>
-    <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-    }
-
-    body {
-        background-color: #f0f2f5;
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 90vh;
-        padding: 20px;
-    }
-
-    .left {
-        max-width: 500px;
-        margin-right: 50px;
-    }
-
-    .logo {
-        color: #1877f2;
-        font-size: 60px;
-        font-weight: bold;
-    }
-
-    .left p {
-        font-size: 24px;
-        line-height: 32px;
-        margin-top: 10px;
-    }
-
-    .right {
-        background-color: #fff;
-        padding: 25px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        width: 380px;
-        text-align: center;
-    }
-
-    .login-form input {
-        width: 100%;
-        padding: 14px;
-        margin-bottom: 10px;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        font-size: 16px;
-    }
-
-    .login-btn {
-        width: 100%;
-        padding: 14px;
-        background-color: #1877f2;
-        color: white;
-        border: none;
-        font-size: 18px;
-        border-radius: 6px;
-        cursor: pointer;
-    }
-
-    .forgot {
-        display: block;
-        margin-top: 10px;
-        color: #1877f2;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    hr {
-        margin: 20px 0;
-    }
-
-    .create-btn {
-        background-color: #42b72a;
-        color: white;
-        padding: 14px;
-        border: none;
-        border-radius: 6px;
-        font-size: 16px;
-        cursor: pointer;
-        width: 70%;
-    }
-
-    .create-page {
-        margin-top: 20px;
-        font-size: 14px;
-    }
-
-    .create-page a {
-        font-weight: bold;
-        color: #000;
-        text-decoration: none;
-    }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Fakebook{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='fakebook.css') }}">
 </head>
 <body>
-    <div class="container">
-        <div class="left">
-            <h1 class="logo">fakebook</h1>
-            <p>Connect with friends and the world around you on Fakebook.</p>
-        </div>
-        <div class="right">
-            <form class="login-form">
-                <input type="text" placeholder="Email or phone number" />
-                <input type="password" placeholder="Password" />
-                <button type="submit" class="login-btn">Log In</button>
-                <a href="#" class="forgot">Forgot password?</a>
-                <hr />
-                <button class="create-btn">Create new account</button>
-            </form>
-            <p class="create-page">
-            <a href="#">Create a Page</a> for a celebrity, brand or business.
-            </p>
-        </div>
-      </div>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
 </body>
 </html>

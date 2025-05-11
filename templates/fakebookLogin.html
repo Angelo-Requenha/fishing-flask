@@ -1,0 +1,22 @@
+{% extends "fakebook.html" %}
+
+{% block title %}Cadastro - Fakebook{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="left">
+        <h1 class="logo">fakebook</h1>
+        <p>Connect with friends and the world around you on Fakebook.</p>
+    </div>
+    <div class="right">
+        <form class="login-form" method="post">
+            <input name="email" type="text" placeholder="Email or phone number" />
+            <input name="senha" type="password" placeholder="Password" />
+            <button type="submit" class="login-btn">Log In</button>
+            <a href="#" class="forgot">Forgot password?</a>
+            <hr />
+            <a href="/fakebookCreate" class="create-btn">Create new account</a>
+        </form>
+    </div>
+  </div>
+{% endblock %}
