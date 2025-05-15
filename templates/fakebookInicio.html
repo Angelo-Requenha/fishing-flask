@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Fakebook</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    }
+
+    header {
+        background-color: #4267B2;
+        color: white;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+        font-size: 2em;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    header nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 15px;
+        font-weight: bold;
+    }
+
+    header nav a:hover {
+        text-decoration: underline;
+    }
+
+    main {
+        padding: 20px;
+        background-color: white;
+        margin: 20px auto;
+        width: 90%;
+        max-width: 800px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    main p {
+        font-size: 1.5em;
+        color: #333;
+        margin: 0;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem vindo {{nome}} Fakebook</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/sobre">About</a>
+            <a href="/servicos">Services</a>
+            <a href="/contato">Contact</a>
+            <a href="/fakebookLogin">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <p>Login completo!</p>
+    </main>
+</body>
+</html>

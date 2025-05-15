@@ -1,5 +1,5 @@
 from main import app
-from flask import render_template, request
+from flask import render_template, request, url_for, redirect, flash
 import sqlite3
 from funcoes import *
 
@@ -26,13 +26,16 @@ def fakebook():
     if request.method == 'POST':
         email = request.form['email']
         senha = request.form['senha']
-
         con = sqlite3.connect('DB/db.sqlite')
-        cur = con.cursor() 
-        
-        con.commit()
+        cur = con.cursor()
+        cur.execute("SELECT * FROM usuarios WHERE email = ? AND senha = ?", (email, senha))
+        user = cur.fetchone()
         con.close()
-    
+        
+        if user:
+            # Redireciona para a página inicial se o login for bem-sucedido
+            return redirect(url_for('home', nome=user[3]))
+            
     return render_template("fakebookLogin.html")
 
 @app.route("/fakebookCreate", methods=["GET", "POST"])
@@ -49,3 +52,7 @@ def fakebookCreate():
         con.close()
     
     return render_template("fakebookCreate.html")
+
+@app.route("/home/<nome>")
+def home(nome):
+    return render_template("fakebookInicio.html", nome=nome)
